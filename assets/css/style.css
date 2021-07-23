@@ -1,0 +1,426 @@
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  line-height: 1.6; /*hatlaryn arasyndaky bosh setirin ginligi */
+  color: #333;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /*tochno width we height beryar margin padding goshup hasaplap, bolmasa padding uchin aslynda ustune yene goshulmaly yazan bahamyzyn( width), yazan bahamyzdan has uly bolya */
+}
+
+h1,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+hr {
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin: 40px 0;
+
+  border: 0;
+  background-color: #e5e5e5;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+/*Intro*/
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  min-height: 820px;
+  position: relative;
+  background: url(../images/Final.jpg) center no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.intro-title {
+  font-size: 150px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1;
+  color: #fff;
+}
+
+.intro-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  margin: 60px auto;
+  background-color: #fff;
+}
+
+.intro-inner {
+  width: 100%;
+  max-width: 880px;
+  margin: 0 auto;
+  text-align: center; /*parent bolany uchin ichindaki ahli child uchin hemmesi center denlenyar */
+}
+
+.intro-suptitle {
+  margin-bottom: 20px auto;
+  font-family: "Kaushan Script", cursive;
+  font-size: 65px;
+  color: #fff;
+  /* text-align: center; */ /*Muny ayyryas sebabi parentde text-align: center bolany uchin bulam center bolyar */
+}
+
+/*Header*/
+.header {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding-top: 30px;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between; /* divda iki element bar hersini bir gyra zynyar */
+  align-items: center; /*logo ashakda durdy nav-dan align-items: center etdik welin ikisi denleshdi */
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: 700;
+  color: cornsilk;
+}
+
+/* Nav */
+.nav {
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.nav-link {
+  display: inline-block; /* bir setirde goyyar, block ashaklygyna goyyar, Inline margin padding berilenok Inline-blockda berip bolyar */
+  vertical-align: top;
+  margin: 0 15px;
+  position: relative;
+  color: #fff;
+  text-decoration: none; /* ashagynyn chyzygyny ayyryar */
+  transition: color 0.1s linear; /* renki akdan plavno gecher yaly */
+}
+
+.nav-link::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  opacity: 0;
+  background-color: rgb(250, 114, 125);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+
+  transition: opacity 0.1s linear;
+}
+.nav-link:hover {
+  color: rgb(250, 114, 125);
+}
+.nav-link:hover::after,
+.nav-link.active {
+  opacity: 1;
+}
+
+.nav-link.nav-link.active {
+  color: rgb(250, 114, 125);
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  vertical-align: top; /* ??? */
+  padding: 8px 30px;
+  border: 3px solid #fff;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  transition: background-color 0.1s linear, color 0.1s linear; /* Shu ishleyami shunda renki name uchin ak bolup dur */
+}
+
+.btn:hover {
+  background-color: #fff;
+  color: black;
+}
+
+/* Slider */
+.slider {
+  width: 100%;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.slider_inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.slider_item {
+  width: 23%;
+  padding: 20px 0;
+  position: relative;
+  border-top: 3px solid #fff;
+  font-size: 18px;
+  color: #fff;
+  opacity: 0.7;
+  text-transform: uppercase;
+}
+
+.slider_item.active {
+  opacity: 1;
+}
+
+.slider_item.active::before {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 3px;
+  background-color: rgb(108, 29, 182);
+
+  position: absolute;
+  top: -3px;
+  left: 0;
+  z-index: 1;
+}
+
+.slider_num {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* Section */
+.section {
+  padding: 80px 0;
+}
+
+.section--devices {
+  padding-bottom: 0;
+  margin-bottom: 40px;
+  background: url("../images/devices-bg.jpg") center no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.section_header {
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto 50px;
+
+  text-align: center;
+}
+
+.section_suptitle {
+  font-family: "Kaushan Script", cursive;
+  font-size: 24px;
+  color: #333;
+}
+
+.section_title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #333;
+  text-transform: uppercase;
+}
+
+.section_title:after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  margin: 40px auto;
+  background-color: rgb(238, 15, 15);
+}
+
+.section_text {
+  font-size: 15px;
+  color: #999;
+}
+
+.about {
+  margin-top: 80px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.about_item {
+  width: 380px;
+  position: relative;
+
+  background-color: #95e1d3;
+}
+
+.about_item:hover .about_img {
+  transform: translate3d(-10px, -10px, 0);
+}
+
+.about_item:hover .about_img img {
+  opacity: 0.1;
+}
+
+.about_item:hover .about_text {
+  opacity: 1;
+}
+
+.about_img {
+  background: linear-gradient(to bottom, #f38181, #fce38a);
+  transition: transform 0.2s linear;
+}
+
+.about_img img {
+  transition: opacity 0.1s linear;
+  display: block;
+}
+
+.about_text {
+  width: 100%; /*shuny yazyanymyzyn sebabi Position Absolute */
+  font-size: 18px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: center;
+  opacity: 0;
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 2;
+  transform: translate3d(0, -50%, 0); /*shu we yokarky 3 setir name anladyar */
+  transition: opacity 0.2s linear;
+}
+
+.statistics {
+  background-color: #95e1d3;
+}
+
+.stat {
+  display: flex;
+}
+
+.stat_item {
+  flex: 1 1 0;
+  padding: 70px 25px;
+
+  border-left: 1px solid #b5eae0;
+  text-align: center;
+  color: #fff;
+}
+
+.stat_item:last-child {
+  border-right: 1px solid #b5eae0;
+}
+
+.stat_count {
+  margin-bottom: 10px;
+
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.stat_text {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+/* Services */
+.services {
+  display: flex;
+}
+
+.services_item {
+  flex: 1 1 0;
+  padding-left: 85px;
+  padding-right: 35px;
+  position: relative;
+}
+
+.services_icon {
+  position: absolute;
+  top: 0;
+  left: 28px;
+  z-index: 1;
+}
+
+.services_title {
+  margin-bottom: 10px;
+
+  font-size: 14px;
+  color: #333;
+  text-transform: uppercase;
+}
+
+.services_text {
+  font-size: 15px;
+  color: #999;
+}
+
+.devices {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.devices_item {
+  display: block;
+}
+
+.devices_item--iphone {
+  position: absolute;
+  bottom: -80px;
+  right: 0;
+  z-index: 1; /*shular name anladyar */
+}
+
+.wedo {
+  display: flex;
+}
+
+.wedo_item {
+  width: 50%;
+}
+
+/* Accordion */
+
+.accordion_item {
+  border: 1px solid #e5e5e5;
+}
+
+.accordion_header {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.accordion_content {
+  padding: 15px 20px;
+}
