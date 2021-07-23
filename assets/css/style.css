@@ -29,7 +29,7 @@ hr {
   margin: 40px 0;
 
   border: 0;
-  background-color: #e5e5e5;
+  background-color: #dbd2d2;
 }
 
 /* Container */
@@ -167,7 +167,7 @@ hr {
 }
 
 .btn:hover {
-  background-color: #fff;
+  background-color: rgb(243, 235, 235);
   color: black;
 }
 
